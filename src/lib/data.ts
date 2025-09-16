@@ -3,21 +3,20 @@ import { PythonIcon } from '@/components/icons/python-icon';
 
 export type Skill = {
   name: string;
-  proficiency: number;
   icon: LucideIcon | string | React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export const SKILLS: Skill[] = [
-  { name: 'Python', proficiency: 90, icon: 'Code' },
-  { name: 'Java', proficiency: 85, icon: 'Code' },
-  { name: 'SQL', proficiency: 80, icon: 'Database' },
-  { name: 'Git & GitHub', proficiency: 90, icon: 'Github' },
-  { name: 'Data Structures & Algorithms', proficiency: 85, icon: 'BrainCircuit' },
-  { name: 'HTML', proficiency: 80, icon: 'Code' },
-  { name: 'CSS', proficiency: 80, icon: 'Code' },
-  { name: 'JavaScript', proficiency: 80, icon: 'Code' },
-  { name: 'Cloud Computing', proficiency: 75, icon: 'Cloud' },
-  { name: 'AI/ML', proficiency: 80, icon: 'BrainCircuit' },
+  { name: 'Python', icon: 'Code' },
+  { name: 'Java', icon: 'Code' },
+  { name: 'SQL', icon: 'Database' },
+  { name: 'Git & GitHub', icon: 'Github' },
+  { name: 'Data Structures & Algorithms', icon: 'BrainCircuit' },
+  { name: 'HTML', icon: 'Code' },
+  { name: 'CSS', icon: 'Code' },
+  { name: 'JavaScript', icon: 'Code' },
+  { name: 'Cloud Computing', icon: 'Cloud' },
+  { name: 'AI/ML', icon: 'BrainCircuit' },
 ];
 
 export type Project = {
@@ -46,10 +45,10 @@ export const PROJECTS: Project[] = [
   },
   {
     title: 'WeatherSense Forecasting System',
-    description: 'An AI-powered live weather forecasting system that won the Best Paper Award at an international conference.',
+    description: 'An AI-powered live weather forecasting system. Presented as a paper at an international conference and won the Best Paper Award.',
     imageId: 'project-3',
     githubUrl: '#',
-    tags: ['Python', 'AI', 'Weather Prediction', 'Award Winning'],
+    tags: ['Python', 'AI', 'Paper Presentation', 'Award Winning'],
   },
 ];
 
