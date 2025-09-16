@@ -25,7 +25,7 @@ export default function About() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <h3 className="font-headline text-3xl font-semibold mb-4">Lakshmi Narayanan K Y</h3>
+            <h3 className="font-headline text-3xl font-semibold mb-4">Lakshmi Narayanan</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
                 Computer Science undergraduate (Batch 2026) with a strong foundation in programming, data structures, algorithms, and database management systems. Skilled in Java, Python, and SQL, with academic projects demonstrating problem-solving and software development capabilities. 

@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Lakshmi Narayanan K Y. All rights reserved.
+            &copy; {new Date().getFullYear()} Lakshmi Narayanan. All rights reserved.
           </p>
           <div className="flex space-x-4">
             <Link href="https://github.com/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
