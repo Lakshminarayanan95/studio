@@ -59,13 +59,6 @@ export default function SkillsClient({ skills }: SkillsClientProps) {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div>
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-sm font-medium text-muted-foreground">Proficiency</span>
-                      <span className="text-sm font-bold">{skill.proficiency}%</span>
-                    </div>
-                    <Progress value={skill.proficiency} aria-label={`${skill.name} proficiency`} />
-                  </div>
                   {summaries[skill.name] && (
                     <div className="p-3 bg-secondary rounded-md">
                       <p className="text-sm text-secondary-foreground">{summaries[skill.name]}</p>
