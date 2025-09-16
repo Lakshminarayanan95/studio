@@ -12,7 +12,7 @@ export default function Education() {
         </div>
         <div className="max-w-3xl mx-auto space-y-8">
           {EDUCATION.map((edu) => (
-            <Card key={edu.institution} className="overflow-hidden">
+            <Card key={`${edu.institution}-${edu.degree}`} className="overflow-hidden">
                 <div className="flex items-center p-6">
                     <GraduationCap className="h-10 w-10 text-accent mr-6 flex-shrink-0" />
                     <div>
