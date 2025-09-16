@@ -1,16 +1,17 @@
 'use client';
 
-import { useState, useRef, useEffect, useTransition } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { MessageCircle, X, Send, Bot, User, Loader } from 'lucide-react';
-import { postMessage } from '@/app/actions';
 import type { ChatHistory } from '@/ai/flows/chat-flow';
 import { cn } from '@/lib/utils';
-import { useStream } from '@genkit-ai/next/client';
+import { useStream, client } from '@genkit-ai/next/client';
 import { chat } from '@/ai/flows/chat-flow';
+
+const chatFlow = client<typeof chat>('chatFlow');
 
 export default function ChatbotClient() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export default function ChatbotClient() {
   const [input, setInput] = useState('');
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  const { data, loading, run } = useStream(chat);
+  const { data, loading, run } = useStream(chatFlow);
 
   useEffect(() => {
     if (data) {
@@ -114,7 +115,7 @@ export default function ChatbotClient() {
                 </Button>
               </form>
             </CardFooter>
-          </Card>
+          </card>
         </div>
       )}
     </>
