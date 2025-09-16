@@ -8,7 +8,7 @@ export type Skill = {
 };
 
 export const SKILLS: Skill[] = [
-  { name: 'Python', proficiency: 90, icon: PythonIcon },
+  { name: 'Python', proficiency: 90, icon: 'Code' },
   { name: 'Java', proficiency: 85, icon: 'Code' },
   { name: 'SQL', proficiency: 80, icon: 'Database' },
   { name: 'Git & GitHub', proficiency: 90, icon: 'Github' },

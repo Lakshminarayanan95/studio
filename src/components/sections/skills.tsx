@@ -1,7 +1,6 @@
 import { SKILLS } from '@/lib/data';
 import SkillsClient from './skills-client';
 import { Code, Server, Database, BrainCircuit, Github, Cloud } from 'lucide-react';
-import { PythonIcon } from '@/components/icons/python-icon';
 
 // This mapping is necessary because we can't pass functions from server to client components.
 const iconMap: Record<string, React.FC<any>> = {
@@ -11,7 +10,6 @@ const iconMap: Record<string, React.FC<any>> = {
   BrainCircuit,
   Github,
   Cloud,
-  PythonIcon,
 };
 
 export default function Skills() {
