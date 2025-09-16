@@ -9,13 +9,22 @@ import { MessageCircle, X, Send, Bot, User, Loader } from 'lucide-react';
 import { postMessage } from '@/app/actions';
 import type { ChatHistory } from '@/ai/flows/chat-flow';
 import { cn } from '@/lib/utils';
+import { useStream } from '@genkit-ai/next/client';
+import { chat } from '@/ai/flows/chat-flow';
 
 export default function ChatbotClient() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<ChatHistory>([]);
   const [input, setInput] = useState('');
-  const [isPending, startTransition] = useTransition();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+
+  const { data, loading, run } = useStream(chat);
+
+  useEffect(() => {
+    if (data) {
+      setMessages(data.history.concat({ role: 'model', content: data.output || '' }));
+    }
+  }, [data]);
 
   const handleToggle = () => setIsOpen(!isOpen);
 
@@ -35,45 +44,7 @@ export default function ChatbotClient() {
     const newMessages: ChatHistory = [...messages, { role: 'user', content: input }];
     setMessages(newMessages);
     setInput('');
-    
-    startTransition(async () => {
-      try {
-        const stream = await postMessage(newMessages);
-        let assistantResponse = '';
-        
-        // Add a placeholder for the assistant's message
-        setMessages(prev => [...prev, { role: 'model', content: '' }]);
-
-        const reader = stream.getReader();
-        const decoder = new TextDecoder();
-        
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          
-          const chunk = decoder.decode(value, { stream: true });
-          assistantResponse += chunk;
-
-          setMessages(prev => {
-            const lastMessage = prev[prev.length - 1];
-            if (lastMessage.role === 'model') {
-              lastMessage.content = assistantResponse;
-              return [...prev.slice(0, -1), lastMessage];
-            }
-            return prev;
-          });
-        }
-      } catch (error) {
-        console.error('Error streaming response:', error);
-        setMessages(prev => [
-          ...prev,
-          {
-            role: 'model',
-            content: 'Sorry, something went wrong. Please try again.',
-          },
-        ]);
-      }
-    });
+    run({ history: newMessages });
   };
 
   return (
@@ -114,12 +85,12 @@ export default function ChatbotClient() {
                             : 'bg-muted'
                         )}
                       >
-                        {message.content || (isPending && index === messages.length - 1 && <Loader className="h-4 w-4 animate-spin" />)}
+                        {message.content}
                       </div>
                       {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0" />}
                     </div>
                   ))}
-                   {isPending && messages.length > 0 && messages[messages.length - 1].role === 'user' && (
+                   {loading && (
                     <div className="flex justify-start gap-2 text-sm">
                       <Bot className="h-5 w-5 text-primary flex-shrink-0" />
                       <div className="rounded-lg px-3 py-2 bg-muted">
@@ -136,9 +107,9 @@ export default function ChatbotClient() {
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask about my skills..."
-                  disabled={isPending}
+                  disabled={loading}
                 />
-                <Button type="submit" size="icon" disabled={isPending}>
+                <Button type="submit" size="icon" disabled={loading}>
                   <Send className="h-4 w-4" />
                 </Button>
               </form>
