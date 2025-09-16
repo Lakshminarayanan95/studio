@@ -40,13 +40,16 @@ export function ChatbotClient({ initialMessages }: ChatbotClientProps) {
     setInput('');
 
     startTransition(async () => {
-      // Create the history for the Genkit flow
-      const history = messages.map(msg => ({
-        role: msg.role,
-        content: [{ text: msg.content }]
-      }));
+      // Create the history for the Genkit flow, excluding the current user message
+      const historyForFlow = messages
+        // Filter out the initial welcome message from history if you want
+        // .filter(msg => msg.content !== "Hello! I'm an AI assistant for Lakshmi Narayanan's portfolio. How can I help you today?")
+        .map(msg => ({
+          role: msg.role,
+          content: [{ text: msg.content }]
+        }));
       
-      const result = await getChatbotResponse({ history: history, message: input });
+      const result = await getChatbotResponse({ history: historyForFlow, message: input });
       
       const botMessage: Message = {
         role: 'model',
