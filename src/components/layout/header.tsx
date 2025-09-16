@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X, Code2, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
@@ -43,6 +43,15 @@ export default function Header() {
             ))}
           </nav>
           
+          <div className="hidden md:flex items-center gap-4 ml-4">
+              <Link href="https://github.com/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform transition-all hover:-translate-y-1">
+                <Github className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+              </Link>
+              <Link href="https://www.linkedin.com/in/lakshminarayananky" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transform transition-all hover:-translate-y-1">
+                <Linkedin className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+              </Link>
+          </div>
+
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -78,6 +87,14 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
+                <div className="flex items-center justify-center gap-6 pt-8">
+                    <Link href="https://github.com/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform transition-all hover:-translate-y-1">
+                      <Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
+                    </Link>
+                    <Link href="https://www.linkedin.com/in/lakshminarayananky" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transform transition-all hover:-translate-y-1">
+                      <Linkedin className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
+                    </Link>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
