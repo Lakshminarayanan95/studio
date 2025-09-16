@@ -66,7 +66,7 @@ export default function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="p-4">
                 <div className="flex justify-between items-center mb-8">
-                  <Link href="/" className="flex items-center space-x-2">
+                  <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                     <Code2 className="h-6 w-6 text-primary" />
                     <span className="font-bold font-headline whitespace-pre-line text-sm leading-tight">
                       Lakshmi Narayanan's{"\n"}Portfolio
