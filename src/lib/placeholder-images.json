@@ -15,8 +15,8 @@
     {
       "id": "project-2",
       "description": "An abstract representation of a drowsiness detection system.",
-      "imageUrl": "https://images.unsplash.com/photo-1594950645934-f8a3d1355938?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkcml2ZXIlMjBkcm93c2luZXNzfGVufDB8fHx8MTc1ODAwNTczNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "driver drowsiness"
+      "imageUrl": "https://images.unsplash.com/photo-1681024874281-d56c5606ae70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkcm93c2luZXNzfGVufDB8fHx8MTc1ODAwNTI4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "drowsiness"
     },
     {
       "id": "project-3",
