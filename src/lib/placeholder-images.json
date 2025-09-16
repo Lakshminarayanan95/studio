@@ -8,9 +8,9 @@
     },
     {
       "id": "project-1",
-      "description": "An abstract representation of an e-commerce platform.",
-      "imageUrl": "https://picsum.photos/seed/project1/600/400",
-      "imageHint": "online store"
+      "description": "An abstract representation of financial fraud detection.",
+      "imageUrl": "https://images.unsplash.com/photo-1581263518256-ba4a28ed5517?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxNnx8ZmluYW5jaWFsJTIwZnJhdWQlMjBkZXRlY3Rpb258ZW58MHx8fHwxNzU4MDA1MjAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "financial fraud"
     },
     {
       "id": "project-2",
