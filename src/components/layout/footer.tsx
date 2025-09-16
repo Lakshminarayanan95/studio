@@ -13,7 +13,7 @@ export default function Footer() {
             <Link href="https://github.com/lakshminarayananky" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
             </Link>
-            <Link href="https://linkedin.com/in/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <Link href="https://www.linkedin.com/in/lakshminarayananky" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
             </Link>
           </div>
