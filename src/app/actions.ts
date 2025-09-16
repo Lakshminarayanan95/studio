@@ -1,8 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { portfolioChat } from '@/ai/flows/chat-flow';
-import { PortfolioChatInputSchema } from '@/lib/types';
 
 
 // Schema for contact form
@@ -49,16 +47,5 @@ export async function uploadResume(formData: FormData) {
   } catch (error) {
     console.error('Error uploading resume:', error);
     return { success: false, message: 'An error occurred during upload.' };
-  }
-}
-
-export async function getChatbotResponse(input: z.infer<typeof PortfolioChatInputSchema>) {
-  const validatedInput = PortfolioChatInputSchema.parse(input);
-  try {
-    const result = await portfolioChat(validatedInput);
-    return { success: true, message: result.response };
-  } catch (error) {
-    console.error('Error in chatbot flow:', error);
-    return { success: false, message: 'Sorry, I encountered an error. Please try again.' };
   }
 }
