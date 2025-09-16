@@ -10,7 +10,8 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
-  { href: '#recommendations', label: 'Recommendations' },
+  { href: '#education', label: 'Education' },
+  { href: '#certifications', label: 'Certifications' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -23,7 +24,7 @@ export default function Header() {
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Code2 className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">Skill Showcase</span>
+            <span className="font-bold font-headline">Lakshmi Narayanan K Y</span>
           </Link>
         </div>
 
@@ -55,7 +56,7 @@ export default function Header() {
                 <div className="flex justify-between items-center mb-8">
                   <Link href="/" className="flex items-center space-x-2">
                     <Code2 className="h-6 w-6 text-primary" />
-                    <span className="font-bold font-headline">Skill Showcase</span>
+                    <span className="font-bold font-headline">Lakshmi Narayanan K Y</span>
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                     <X className="h-5 w-5" />

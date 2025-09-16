@@ -19,8 +19,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Email</h4>
-                  <a href="mailto:alex.doe@example.com" className="text-muted-foreground hover:text-foreground">
-                    alex.doe@example.com
+                  <a href="mailto:kylakshminarayanan@gmail.com" className="text-muted-foreground hover:text-foreground">
+                    kylakshminarayanan@gmail.com
                   </a>
                 </div>
               </div>
@@ -30,7 +30,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-muted-foreground">(123) 456-7890</p>
+                  <p className="text-muted-foreground">6383146427</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -39,7 +39,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Location</h4>
-                  <p className="text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-muted-foreground">Tamil Nadu, India</p>
                 </div>
               </div>
             </div>
