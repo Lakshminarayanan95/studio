@@ -7,12 +7,14 @@ export type Skill = {
 };
 
 export const SKILLS: Skill[] = [
-  { name: 'React & Next.js', proficiency: 95, icon: 'Code' },
-  { name: 'Node.js & Express', proficiency: 90, icon: 'Server' },
-  { name: 'TypeScript', proficiency: 90, icon: 'Code' },
-  { name: 'SQL & NoSQL', proficiency: 85, icon: 'Database' },
-  { name: 'UI/UX Design', proficiency: 75, icon: 'BrainCircuit' },
-  { name: 'DevOps (Docker, CI/CD)', proficiency: 80, icon: 'Server' },
+  { name: 'Python', proficiency: 90, icon: 'Code' },
+  { name: 'Java', proficiency: 85, icon: 'Code' },
+  { name: 'SQL', proficiency: 80, icon: 'Database' },
+  { name: 'Git & GitHub', proficiency: 90, icon: 'Github' },
+  { name: 'Data Structures & Algorithms', proficiency: 85, icon: 'BrainCircuit' },
+  { name: 'HTML, CSS, JS', proficiency: 80, icon: 'Code' },
+  { name: 'Cloud Computing', proficiency: 75, icon: 'Cloud' },
+  { name: 'AI/ML', proficiency: 80, icon: 'BrainCircuit' },
 ];
 
 export type Project = {
