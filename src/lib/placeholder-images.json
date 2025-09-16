@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "about-image",
+      "description": "A professional portrait of a person.",
+      "imageUrl": "https://picsum.photos/seed/about/600/600",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "project-1",
+      "description": "An abstract representation of an e-commerce platform.",
+      "imageUrl": "https://picsum.photos/seed/project1/600/400",
+      "imageHint": "online store"
+    },
+    {
+      "id": "project-2",
+      "description": "An abstract representation of a project management tool.",
+      "imageUrl": "https://picsum.photos/seed/project2/600/400",
+      "imageHint": "team collaboration"
+    },
+    {
+      "id": "project-3",
+      "description": "An abstract representation of a personal blog.",
+      "imageUrl": "https://picsum.photos/seed/project3/600/400",
+      "imageHint": "writing desk"
+    },
+    {
+      "id": "avatar-1",
+      "description": "Avatar for Jane Smith",
+      "imageUrl": "https://picsum.photos/seed/avatar1/100/100",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "avatar-2",
+      "description": "Avatar for John Davis",
+      "imageUrl": "https://picsum.photos/seed/avatar2/100/100",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "avatar-3",
+      "description": "Avatar for Emily White",
+      "imageUrl": "https://picsum.photos/seed/avatar3/100/100",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "avatar-4",
+      "description": "Avatar for Michael Brown",
+      "imageUrl": "https://picsum.photos/seed/avatar4/100/100",
+      "imageHint": "professional headshot"
+    }
+  ]
 }
