@@ -1,6 +1,8 @@
 'use server';
 
 import { z } from 'zod';
+import { streamText } from 'genkit';
+import { chat, ChatHistory, Message } from '@/ai/flows/chat-flow';
 
 
 // Schema for contact form
@@ -48,4 +50,16 @@ export async function uploadResume(formData: FormData) {
     console.error('Error uploading resume:', error);
     return { success: false, message: 'An error occurred during upload.' };
   }
+}
+
+
+export async function postMessage(history: ChatHistory) {
+  const result = await streamText({
+    model: chat,
+    input: {
+      history,
+    },
+  });
+
+  return result.stream;
 }
