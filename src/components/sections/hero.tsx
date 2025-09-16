@@ -6,7 +6,7 @@ export default function Hero() {
     <section id="hero" className="w-full py-20 lg:py-32 bg-secondary/50">
       <div className="container mx-auto text-center px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
             Crafting Digital Experiences
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
