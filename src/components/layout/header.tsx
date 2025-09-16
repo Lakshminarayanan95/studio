@@ -43,7 +43,7 @@ export default function Header() {
             ))}
           </nav>
           
-          <div className="hidden md:flex items-center gap-4 ml-4">
+          <div className="hidden md:flex items-center gap-2 ml-2 border border-border/50 rounded-full px-3 py-1">
               <Link href="https://github.com/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform transition-all hover:-translate-y-1">
                 <Github className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
               </Link>
@@ -87,7 +87,7 @@ export default function Header() {
                     </Link>
                   ))}
                 </nav>
-                <div className="flex items-center justify-center gap-6 pt-8">
+                <div className="flex items-center justify-center gap-4 pt-8 border-t border-border/50 mt-8">
                     <Link href="https://github.com/Lakshminarayanan95" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transform transition-all hover:-translate-y-1">
                       <Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" />
                     </Link>
