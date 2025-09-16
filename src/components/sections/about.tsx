@@ -16,7 +16,7 @@ export default function About() {
             </div>
           </div>
           <div className="md:col-span-3">
-            <h2 className="font-headline text-4xl font-bold mb-4">About Me</h2>
+            <h2 className="font-headline text-4xl font-bold mb-4 -mt-8">About Me</h2>
             <h3 className="font-headline text-3xl font-semibold mb-4">Lakshmi Narayanan</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
