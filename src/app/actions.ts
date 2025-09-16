@@ -1,8 +1,7 @@
 'use server';
 
 import { z } from 'zod';
-import { streamText } from 'genkit';
-import { chat, ChatHistory, Message } from '@/ai/flows/chat-flow';
+import { chat, ChatHistory } from '@/ai/flows/chat-flow';
 
 
 // Schema for contact form
@@ -54,12 +53,8 @@ export async function uploadResume(formData: FormData) {
 
 
 export async function postMessage(history: ChatHistory) {
-  const result = await streamText({
-    model: chat,
-    input: {
-      history,
-    },
+  const {stream} = await chat.stream({
+    history,
   });
-
-  return result.stream;
+  return stream;
 }

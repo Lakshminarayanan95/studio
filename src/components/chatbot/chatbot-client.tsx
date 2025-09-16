@@ -44,11 +44,19 @@ export default function ChatbotClient() {
         // Add a placeholder for the assistant's message
         setMessages(prev => [...prev, { role: 'model', content: '' }]);
 
-        for await (const chunk of stream) {
+        const reader = stream.getReader();
+        const decoder = new TextDecoder();
+        
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          
+          const chunk = decoder.decode(value, { stream: true });
           assistantResponse += chunk;
+
           setMessages(prev => {
-            const lastMessage = prev[prev.length -1];
-            if(lastMessage.role === 'model') {
+            const lastMessage = prev[prev.length - 1];
+            if (lastMessage.role === 'model') {
               lastMessage.content = assistantResponse;
               return [...prev.slice(0, -1), lastMessage];
             }
@@ -111,7 +119,7 @@ export default function ChatbotClient() {
                       {message.role === 'user' && <User className="h-5 w-5 text-muted-foreground flex-shrink-0" />}
                     </div>
                   ))}
-                   {isPending && messages[messages.length - 1].role === 'user' && (
+                   {isPending && messages.length > 0 && messages[messages.length - 1].role === 'user' && (
                     <div className="flex justify-start gap-2 text-sm">
                       <Bot className="h-5 w-5 text-primary flex-shrink-0" />
                       <div className="rounded-lg px-3 py-2 bg-muted">
