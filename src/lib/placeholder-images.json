@@ -3,7 +3,7 @@
     {
       "id": "about-image",
       "description": "A professional portrait of a person.",
-      "imageUrl": "https://picsum.photos/seed/about/600/600",
+      "imageUrl": "/my-photo.jpg",
       "imageHint": "professional portrait"
     },
     {

@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const aboutImage = PlaceHolderImages.find(p => p.id === 'about-image');
 
 export default function About() {
   return (
@@ -13,15 +10,12 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-center">
           <div className="md:col-span-2">
             <div className="relative aspect-square rounded-lg overflow-hidden shadow-lg mx-auto max-w-xs md:max-w-none">
-              {aboutImage && (
-                <Image
-                  src={aboutImage.imageUrl}
-                  alt={aboutImage.description}
-                  fill
-                  className="object-cover"
-                  data-ai-hint={aboutImage.imageHint}
-                />
-              )}
+              <Image
+                src="/my-photo.jpg"
+                alt="A professional portrait of Lakshmi Narayanan."
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="md:col-span-3">
