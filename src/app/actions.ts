@@ -1,8 +1,10 @@
 'use server';
 
 import { z } from 'zod';
+import { Resend } from 'resend';
 
-// Schema for contact form
+const resend = new Resend(process.env.RESEND_API_KEY);
+
 const contactSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
@@ -11,12 +13,33 @@ const contactSchema = z.object({
 
 export async function submitContactForm(values: z.infer<typeof contactSchema>) {
   try {
-    // In a real application, you would send an email, save to a database, etc.
-    console.log('Contact form submitted:', values);
+    const { name, email, message } = values;
 
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Resend API key is not set.');
+      return { success: false, message: 'Server configuration error.' };
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: 'Portfolio Contact Form <onboarding@resend.dev>',
+      to: ['kylakshminarayanan@gmail.com'],
+      subject: `New Message from ${name} via Portfolio`,
+      reply_to: email,
+      html: `
+        <p>You have received a new message from your portfolio contact form.</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message}</p>
+      `,
+    });
+
+    if (error) {
+      console.error('Error sending email:', error);
+      return { success: false, message: 'Failed to send message.' };
+    }
+
+    console.log('Email sent successfully:', data);
     return { success: true, message: 'Message sent successfully!' };
   } catch (error) {
     console.error('Error submitting contact form:', error);
@@ -32,14 +55,10 @@ export async function uploadResume(formData: FormData) {
   }
   
   try {
-    // Here you would typically upload the file to a storage service (like Firebase Storage)
-    // and then trigger a parsing function (e.g., a Cloud Function with a GenAI model).
     console.log('Resume uploaded:', file.name, file.type, file.size);
     
-    // Simulate parsing delay
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    // Simulate parsing success
     console.log('Resume parsed successfully.');
     
     return { success: true, message: 'Resume uploaded and parsed successfully!' };
