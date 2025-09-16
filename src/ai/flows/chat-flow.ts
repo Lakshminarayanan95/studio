@@ -62,16 +62,10 @@ const chatPrompt = ai.definePrompt(
     output: {
       schema: z.string()
     },
-    prompt: `
-      {{#each history}}
-        {{#if (eq role 'user')}}From user: {{/if}}
-        {{#if (eq role 'model')}}From you: {{/if}}
-        {{#each content}}
-          {{#if text}}{{text}}{{/if}}
-        {{/each}}
-      {{/each}}
-      From user: {{{message}}}
-      From you: `,
+    prompt: `{{#each history}}{{#if (eq this.role 'user')}}From user: {{/if}}{{#if (eq this.role 'model')}}From you: {{/if}}{{#each this.content}}{{#if this.text}}{{this.text}}{{/if}}{{/each}}
+{{/each}}
+From user: {{{message}}}
+From you: `,
   }
 );
 
