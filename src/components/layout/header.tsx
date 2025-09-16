@@ -31,12 +31,12 @@ export default function Header() {
         </div>
 
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="hidden md:flex gap-6 text-sm">
+          <nav className="hidden md:flex items-center gap-4 text-sm border border-border/50 rounded-full px-3 py-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground/60 transition-all hover:text-foreground/80 hover:-translate-y-1 transform"
+                className="text-foreground/60 transition-all hover:text-foreground/80 hover:-translate-y-1 transform px-2"
               >
                 {link.label}
               </Link>
