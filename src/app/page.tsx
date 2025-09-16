@@ -4,7 +4,6 @@ import About from "@/components/sections/about";
 import Skills from "@/components/sections/skills";
 import Projects from "@/components/sections/projects";
 import Education from "@/components/sections/education";
-import Journey from "@/components/sections/journey";
 import Certifications from "@/components/sections/certifications";
 import Contact from "@/components/sections/contact";
 import Footer from "@/components/layout/footer";
@@ -19,7 +18,6 @@ export default function Home() {
         <Skills />
         <Projects />
         <Education />
-        <Journey />
         <Certifications />
         <Contact />
       </main>

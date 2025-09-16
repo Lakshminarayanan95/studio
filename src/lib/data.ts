@@ -139,21 +139,3 @@ export const CERTIFICATIONS: Certification[] = [
     description: 'Hands-on exposure to AI concepts and machine learning model building using Python.'
   }
 ];
-
-export type Experience = {
-  role: string;
-  company: string;
-  period: string;
-  description: string;
-  icon: LucideIcon | string;
-};
-
-export const EXPERIENCE: Experience[] = [
-  {
-    role: 'Machine Learning Developer (Project)',
-    company: 'Academic Project',
-    period: 'Jul 2024 – Nov 2024',
-    description: 'Created a Python system to identify fraudulent bank transactions, scaled essential features, and preprocessed data for model training using Pandas, NumPy, and Scikit-learn.',
-    icon: 'Briefcase',
-  },
-];
