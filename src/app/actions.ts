@@ -1,8 +1,6 @@
 'use server';
 
 import { z } from 'zod';
-import { chat, ChatHistory } from '@/ai/flows/chat-flow';
-
 
 // Schema for contact form
 const contactSchema = z.object({
@@ -49,12 +47,4 @@ export async function uploadResume(formData: FormData) {
     console.error('Error uploading resume:', error);
     return { success: false, message: 'An error occurred during upload.' };
   }
-}
-
-
-export async function postMessage(history: ChatHistory) {
-  const {stream} = await chat.stream({
-    history,
-  });
-  return stream;
 }
