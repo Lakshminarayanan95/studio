@@ -45,7 +45,10 @@ export default function SkillsClient({ skills }: SkillsClientProps) {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {skills.map((skill) => {
-          const Icon = typeof skill.icon === 'string' ? (icons as Record<string, LucideIcon>)[skill.icon] : skill.icon;
+          const Icon = typeof skill.icon === 'string' 
+            ? (icons as Record<string, LucideIcon>)[skill.icon] 
+            : skill.icon as React.FC<any>; // Allow custom SVG components
+
           return (
             <Card key={skill.name}>
               <CardHeader>

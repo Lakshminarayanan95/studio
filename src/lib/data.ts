@@ -1,13 +1,14 @@
 import { type LucideIcon } from 'lucide-react';
+import { PythonIcon } from '@/components/icons/python-icon';
 
 export type Skill = {
   name: string;
   proficiency: number;
-  icon: LucideIcon | string;
+  icon: LucideIcon | string | React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 export const SKILLS: Skill[] = [
-  { name: 'Python', proficiency: 90, icon: 'Code' },
+  { name: 'Python', proficiency: 90, icon: PythonIcon },
   { name: 'Java', proficiency: 85, icon: 'Code' },
   { name: 'SQL', proficiency: 80, icon: 'Database' },
   { name: 'Git & GitHub', proficiency: 90, icon: 'Github' },
