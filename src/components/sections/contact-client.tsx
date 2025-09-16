@@ -83,7 +83,7 @@ export default function ContactClient() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>write messages/queries:</FormLabel>
               <FormControl>
                 <Textarea placeholder="Your message..." {...field} rows={5} />
               </FormControl>
