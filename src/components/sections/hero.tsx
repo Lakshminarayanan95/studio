@@ -10,7 +10,7 @@ export default function Hero() {
             Crafting Digital Experiences
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Software Developer
+            I'm Lakshmi Narayanan, a passionate software developer.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
             <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
