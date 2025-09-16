@@ -12,7 +12,9 @@ export const SKILLS: Skill[] = [
   { name: 'SQL', proficiency: 80, icon: 'Database' },
   { name: 'Git & GitHub', proficiency: 90, icon: 'Github' },
   { name: 'Data Structures & Algorithms', proficiency: 85, icon: 'BrainCircuit' },
-  { name: 'HTML, CSS, JS', proficiency: 80, icon: 'Code' },
+  { name: 'HTML', proficiency: 80, icon: 'Code' },
+  { name: 'CSS', proficiency: 80, icon: 'Code' },
+  { name: 'JavaScript', proficiency: 80, icon: 'Code' },
   { name: 'Cloud Computing', proficiency: 75, icon: 'Cloud' },
   { name: 'AI/ML', proficiency: 80, icon: 'BrainCircuit' },
 ];
