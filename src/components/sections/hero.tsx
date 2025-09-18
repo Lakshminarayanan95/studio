@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="container mx-auto text-center px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-headline text-3xl md:text-5xl font-bold tracking-tight bg-gradient-to-br from-primary to-accent bg-clip-text text-transparent">
-            Crafting Digital Experiences
+            Crafting<br />Digital<br />Experiences
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             I'm Lakshmi Narayanan, a passionate software developer.
