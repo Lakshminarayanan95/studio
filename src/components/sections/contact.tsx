@@ -30,7 +30,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Phone</h4>
-                  <p className="text-muted-foreground">6383146427</p>
+                  <a href="tel:6383146427" className="text-muted-foreground hover:text-foreground">6383146427</a>
                 </div>
               </div>
               <div className="flex items-center gap-4">
